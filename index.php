@@ -48,12 +48,12 @@ $availableVariables = array_keys($variables);
         }
 
         h4 {
-            color: #1F2937; /* Dark grey for titles */
+            color: #1F2937; 
         }
 
         .select {
-            background-color: #F9FAFB; /* Light grey input background */
-            border: 1px solid #D1D5DB; /* Light grey border */
+            background-color: #F9FAFB; 
+            border: 1px solid #D1D5DB;
             border-radius: 8px;
             padding: 8px 12px;
             font-size: 1rem;
@@ -72,7 +72,7 @@ $availableVariables = array_keys($variables);
         }
 
         .btn-primary {
-            background-color:#0F4C81; /* Light blue background */
+            background-color:#0F4C81;
             color: white;
             border: none;
         }
@@ -83,12 +83,12 @@ $availableVariables = array_keys($variables);
 
         .btn-outline {
             border: none;
-            background-color:#0F4C81; /* Light blue background */
+            background-color:#0F4C81; 
             color: white;
         }
 
         .btn-outline:hover {
-            background-color: #93C5FD; /* Light blue background on hover */
+            background-color: #93C5FD; 
             color: white;
         }
 
@@ -101,7 +101,7 @@ $availableVariables = array_keys($variables);
             height: 500px;
         }
 
-        /* Tailwind Responsive Adjustments */
+
         @media (max-width: 768px) {
             .btn-group {
                 flex-direction: column;
@@ -193,12 +193,10 @@ $availableVariables = array_keys($variables);
     let selectedVariable = document.getElementById('variableSelect').value;
     let chartType = 'line';
 
-    // Function to generate random colors
     function getRandomColor() {
         return `rgba(${Math.floor(Math.random() * 200)}, ${Math.floor(Math.random() * 200)}, ${Math.floor(Math.random() * 200)}, 1)`;
     }
 
-    // Initialize chart with selected data
     let chart = new Chart(ctx, {
         type: chartType,
         data: {
@@ -230,7 +228,7 @@ $availableVariables = array_keys($variables);
         }
     });
 
-    // Event listener for selecting a variable
+
     document.getElementById('variableSelect').addEventListener('change', function() {
         selectedVariable = this.value;
         chart.data.datasets[0].label = selectedVariable;
@@ -240,7 +238,6 @@ $availableVariables = array_keys($variables);
         chart.update();
     });
 
-    // Function to change chart type
     function changeChartType(type) {
         chartType = type;
         chart.destroy();
